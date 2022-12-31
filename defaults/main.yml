@@ -1,0 +1,18 @@
+---
+# defaults file for recalbox
+
+# general/network
+recalbox_ssh_enabled: 1
+recalbox_samba_enabled: 0
+recalbox_audio_mode: "videosoundonly" # musicxorvideosound,musicandvideosound,musiconly,videosoundonly,none
+recalbox_audio_bgmusic: 0
+recalbox_system_manager_enabled: 0
+recalbox_sharewait: 10
+
+# multiplayer
+recalbox_global_netplay_enabled: 1
+recalbox_global_netplay_port: 55435
+
+# pc only
+recalbox_kodi_enabled: 1
+recalbox_kodi_at_startup: 0

@@ -1,0 +1,62 @@
+---
+# tasks file for recalbox
+- name: Remount root fs as writable
+  ansible.builtin.shell: "mount -o remount,rw /"
+  args:
+    warn: no
+
+- name: Set root password
+  ansible.builtin.shell: |
+    set timeout 10
+    spawn passwd root
+    expect "New password:"
+    send "{{ recalbox_root_password }}\n"
+    expect "Retype password:"
+    send "{{ recalbox_root_password }}\n"
+    expect "passwd: password for root changed"
+    exit 0
+  args:
+    executable: /usr/bin/expect
+  no_log: True
+
+- name: Set hostname
+  ansible.builtin.copy:
+    dest: /etc/hostname
+    content: "{{ recalbox_host_name }}\n"
+
+- name: Copy a version of recalbox.conf that is dependent on the host type
+  ansible.builtin.template:
+    src: recalbox_{{ recalbox_host_type }}.conf
+    dest: /recalbox/share/system/recalbox.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Remount /boot fs as writable
+  ansible.builtin.shell: "mount -o remount,rw /boot"
+  args:
+    warn: no
+    
+- name: Copy a version of recalbox-boot.conf that is dependent on the host type
+  ansible.builtin.template:
+    src: recalbox-boot.conf
+    dest: /boot/recalbox-boot.conf
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Set external screen configuration if enabled
+  shell: "export DISPLAY=:0 && xrandr --output {{ recalbox_primary_screen_name }} --mode {{ recalbox_primary_screen_resolution }} --output {{ recalbox_external_screen_name }} --mode {{ recalbox_external_screen_resolution }}"
+  when: recalbox_multiple_screens_enabled == 1
+
+- name: Unconditionally reboot the machine with all defaults
+  ansible.builtin.reboot:
+  when: recalbox_ssh_enabled == 1
+  
+- name: Delayed reboot
+  shell: /usr/bin/sleep 5 && /usr/sbin/reboot
+  async: 1
+  poll: 0
+  args:
+    executable: /bin/bash
+  when: recalbox_ssh_enabled == 0
