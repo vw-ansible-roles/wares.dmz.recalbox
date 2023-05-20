@@ -47,7 +47,7 @@
 
 - name: Set external screen configuration if enabled
   shell: "export DISPLAY=:0 && xrandr --output {{ recalbox_primary_screen_name }} --mode {{ recalbox_primary_screen_resolution }} --output {{ recalbox_external_screen_name }} --mode {{ recalbox_external_screen_resolution }}"
-  when: recalbox_multiple_screens_enabled == 1
+  when: recalbox_multiple_screens_enabled == 1 and recalbox_host_type != "piboy"
 
 - name: Unconditionally reboot the machine with all defaults
   ansible.builtin.reboot:
