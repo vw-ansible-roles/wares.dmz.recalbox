@@ -24,9 +24,9 @@
     dest: /etc/hostname
     content: "{{ recalbox_host_name }}\n"
 
-- name: Copy a version of recalbox.conf that is dependent on the host type
+- name: Copy a version of recalbox.conf that is dependent on the host type and version
   ansible.builtin.template:
-    src: recalbox_{{ recalbox_host_type }}.conf
+    src: recalbox_{{ recalbox_host_type }}.{{ recalbox_version }}.conf
     dest: /recalbox/share/system/recalbox.conf
     owner: root
     group: root
@@ -37,9 +37,9 @@
   args:
     warn: no
     
-- name: Copy a version of recalbox-boot.conf that is dependent on the host type
+- name: Copy a version of recalbox-boot.conf that is dependent on version
   ansible.builtin.template:
-    src: recalbox-boot.conf
+    src: recalbox-boot.{{ recalbox_version }}.conf
     dest: /boot/recalbox-boot.conf
     owner: root
     group: root
