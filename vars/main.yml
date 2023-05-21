@@ -2,7 +2,7 @@
 # vars file for recalbox
 
 # general/network
-recalbox_version: "6.0.0"
+recalbox_version: "8.1.1"
 recalbox_host_type: "pc" # pc,gpicase
 recalbox_host_name: "recalboxhost"
 recalbox_root_password: "n3wP@55w0rd!" # must meet requirements
