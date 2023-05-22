@@ -1,8 +1,11 @@
 ---
 # vars file for recalbox
 
+no_debug: True
+
 # general/network
-recalbox_host_type: "pc" # pc,gpicase
+recalbox_version: "8.1.1"
+recalbox_host_type: "pc" # pc,gpicase,piboy
 recalbox_host_name: "recalboxhost"
 recalbox_root_password: "n3wP@55w0rd!" # must meet requirements
 recalbox_wifi_enabled: 1

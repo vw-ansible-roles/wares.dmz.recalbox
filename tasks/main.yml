@@ -17,16 +17,16 @@
     exit 0
   args:
     executable: /usr/bin/expect
-  no_log: True
+  no_log: "{{ no_debug }}"
 
 - name: Set hostname
   ansible.builtin.copy:
     dest: /etc/hostname
     content: "{{ recalbox_host_name }}\n"
 
-- name: Copy a version of recalbox.conf that is dependent on the host type
+- name: Copy a version of recalbox.conf that is dependent on the host type and version
   ansible.builtin.template:
-    src: recalbox_{{ recalbox_host_type }}.conf
+    src: recalbox_{{ recalbox_host_type }}.{{ recalbox_version }}.conf
     dest: /recalbox/share/system/recalbox.conf
     owner: root
     group: root
@@ -37,7 +37,7 @@
   args:
     warn: no
     
-- name: Copy a version of recalbox-boot.conf that is dependent on the host type
+- name: Copy a version of recalbox-boot.conf
   ansible.builtin.template:
     src: recalbox-boot.conf
     dest: /boot/recalbox-boot.conf
@@ -47,7 +47,7 @@
 
 - name: Set external screen configuration if enabled
   shell: "export DISPLAY=:0 && xrandr --output {{ recalbox_primary_screen_name }} --mode {{ recalbox_primary_screen_resolution }} --output {{ recalbox_external_screen_name }} --mode {{ recalbox_external_screen_resolution }}"
-  when: recalbox_multiple_screens_enabled == 1
+  when: recalbox_multiple_screens_enabled == 1 and recalbox_host_type != "piboy" and recalbox_host_type != "gpicase"
 
 - name: Unconditionally reboot the machine with all defaults
   ansible.builtin.reboot:
