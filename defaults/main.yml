@@ -7,7 +7,7 @@ recalbox_samba_enabled: 0
 recalbox_audio_mode: "videosoundonly" # musicxorvideosound,musicandvideosound,musiconly,videosoundonly,none
 recalbox_audio_bgmusic: 0
 recalbox_system_manager_enabled: 0
-recalbox_sharewait: 10
+recalbox_sharewait: 30
 
 # multiplayer
 recalbox_global_netplay_enabled: 1
