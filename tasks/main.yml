@@ -5,7 +5,7 @@
   args:
     warn: no
 
-- name: Set root password
+- name: Set root password (old method)
   ansible.builtin.shell: |
     set timeout 10
     spawn passwd root
@@ -18,6 +18,13 @@
   args:
     executable: /usr/bin/expect
   no_log: "{{ no_debug }}"
+
+- name: Copy custom boot script
+  ansible.builtin.template:
+    src: custom.sh
+    dest: /recalbox/share/system/custom.sh
+    owner: root
+    group: root
 
 - name: Set hostname
   ansible.builtin.copy:
@@ -36,7 +43,7 @@
   ansible.builtin.shell: "mount -o remount,rw /boot"
   args:
     warn: no
-    
+
 - name: Copy a version of recalbox-boot.conf
   ansible.builtin.template:
     src: recalbox-boot.conf
