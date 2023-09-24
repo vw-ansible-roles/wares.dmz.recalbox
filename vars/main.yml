@@ -12,6 +12,12 @@ recalbox_wifi_enabled: 1
 recalbox_wifi_region_country_code: "FR"
 recalbox_wifi_ssid: "yourssid"
 recalbox_wifi_key: "yourwifikey" # Escape your special chars (# ; $) with a backslash : $ => \$
+recalbox_wifi2_region_country_code: "FR"
+recalbox_wifi2_ssid: "yourssid2"
+recalbox_wifi2_key: "yourwifikey2" # Escape your special chars (# ; $) with a backslash : $ => \$
+recalbox_wifi3_region_country_code: "FR"
+recalbox_wifi3_ssid: "yourssid3"
+recalbox_wifi3_key: "yourwifikey3" # Escape your special chars (# ; $) with a backslash : $ => \$
 recalbox_updates_enabled: 1
 
 # share device
