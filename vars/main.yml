@@ -33,14 +33,9 @@ recalbox_global_netplay_nickname : "PlayerOne"
 recalbox_system_language: "fr_FR" # fr_FR,en_US,en_GB,de_DE,pt_BR,es_ES,it_IT,eu_ES,tr_TR,zh_CN
 recalbox_keyboard_layout: "fr" # fr,en,de,us,es
 
-# external screen preferences - don't touch if you don't know what you're doing
+# external screen preference - don't touch if you don't know what you're doing
 ## See https://wiki.recalbox.com/en/tutorials/video/display-configuration/external-screen-configuration for more informations
 ## Preferred external screen retrieved from ssh : xrandr
-recalbox_multiple_screens_enabled: 1
-recalbox_prefered_screen_name: "HDMI1"
-recalbox_primary_screen_name: "LVDS1"
-recalbox_primary_screen_resolution: "1280x720"
-recalbox_primary_screen_frequency: "59.00"
-recalbox_external_screen_name: "HDMI1"
-recalbox_external_screen_resolution: "1280x720"
-recalbox_external_screen_frequency: "60.00"
+#recalbox_prefered_screen_name: "HDMI1"
+#recalbox_prefered_screen_resolution: "1280x720"
+#recalbox_prefered_screen_frequency: "60.00"

@@ -5,6 +5,7 @@
 recalbox_ssh_enabled: 1
 recalbox_samba_enabled: 0
 recalbox_audio_mode: "videosoundonly" # musicxorvideosound,musicandvideosound,musiconly,videosoundonly,none
+recalbox_audio_volume: 40
 recalbox_audio_bgmusic: 0
 recalbox_system_manager_enabled: 0
 recalbox_sharewait: 30
