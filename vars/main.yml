@@ -39,3 +39,7 @@ recalbox_keyboard_layout: "fr" # fr,en,de,us,es
 #recalbox_prefered_screen_name: "HDMI1"
 #recalbox_prefered_screen_resolution: "1280x720"
 #recalbox_prefered_screen_frequency: "60.00"
+
+# Wiimotes / Dolphinbar
+recalbox_wii_sensorbar_position: 1 # bottom=0, top=1
+recalbox_wii_realwiimotes: 0 # set to 1 to use authentic Wiimotes
