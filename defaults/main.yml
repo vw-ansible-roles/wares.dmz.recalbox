@@ -9,6 +9,7 @@ recalbox_audio_volume: 40
 recalbox_audio_bgmusic: 0
 recalbox_system_manager_enabled: 0
 recalbox_sharewait: 30
+recalbox_forcebasicgamelistview: 0
 
 # multiplayer
 recalbox_global_netplay_enabled: 1
