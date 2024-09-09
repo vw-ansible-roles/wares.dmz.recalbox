@@ -1,20 +1,46 @@
 ---
 # defaults file for recalbox
+no_debug: True
 
 # general/network
-recalbox_ssh_enabled: 1
-recalbox_samba_enabled: 0
-recalbox_audio_mode: "videosoundonly" # musicxorvideosound,musicandvideosound,musiconly,videosoundonly,none
-recalbox_audio_volume: 40
-recalbox_audio_bgmusic: 0
-recalbox_system_manager_enabled: 0
-recalbox_sharewait: 30
-recalbox_forcebasicgamelistview: 0
+recalbox_version: "8.1.1"
+recalbox_host_type: "pc" # pc,gpicase,piboy
+recalbox_host_name: "recalboxhost"
+recalbox_root_password: "n3wP@55w0rd!" # must meet requirements
+recalbox_wifi_enabled: 1
+recalbox_wifi_region_country_code: "FR"
+recalbox_wifi_ssid: "yourssid"
+recalbox_wifi_key: "yourwifikey" # Escape your special chars (# ; $) with a backslash : $ => \$
+recalbox_wifi2_region_country_code: "FR"
+recalbox_wifi2_ssid: "yourssid2"
+recalbox_wifi2_key: "yourwifikey2" # Escape your special chars (# ; $) with a backslash : $ => \$
+recalbox_wifi3_region_country_code: "FR"
+recalbox_wifi3_ssid: "yourssid3"
+recalbox_wifi3_key: "yourwifikey3" # Escape your special chars (# ; $) with a backslash : $ => \$
+recalbox_updates_enabled: 1
+
+# share device
+recalbox_sharedevice: "NETWORK" # INTERNAL,ANYINTERNAL,NETWORK
+recalbox_sharedevice_network_directives:
+  - {name: 'sharenetwork_smb', local_path: 'ROMS', hostname: '192.168.0.100', remote_path: 'games/emul/roms', auth: 'guest'}
+  - {name: 'sharenetwork_smb', local_path: 'SAVES', hostname: '192.168.0.100', remote_path: 'games/emul/saves', auth: 'username=recalbox,password=5m8P455w0rd,vers=2.0'}
+  - {name: 'sharenetwork_smb', local_path: 'BIOS', hostname: '192.168.0.100', remote_path: 'games/emul/bios', auth: 'guest'}
+  - {name: 'sharenetwork_smb', local_path: 'MUSIC', hostname: '192.168.0.100', remote_path: 'music/rock', auth: 'guest'}
 
 # multiplayer
-recalbox_global_netplay_enabled: 1
-recalbox_global_netplay_port: 55435
+recalbox_global_netplay_nickname : "PlayerOne"
+recalbox_system_language: "fr_FR" # fr_FR,en_US,en_GB,de_DE,pt_BR,es_ES,it_IT,eu_ES,tr_TR,zh_CN
+recalbox_keyboard_layout: "fr" # fr,en,de,us,es
 
-# pc only
-recalbox_kodi_enabled: 1
-recalbox_kodi_at_startup: 0
+# external screen preference - don't touch if you don't know what you're doing
+## See https://wiki.recalbox.com/en/tutorials/video/display-configuration/external-screen-configuration for more informations
+## Preferred external screen retrieved from ssh : xrandr
+#recalbox_prefered_screen_name: "HDMI1"
+#recalbox_prefered_screen_resolution: "1280x720"
+#recalbox_prefered_screen_frequency: "60.00"
+recalbox_global_videomode: "default"
+recalbox_kodi_videomode: "default"
+
+# Wiimotes / Dolphinbar
+recalbox_wii_sensorbar_position: 1 # deprecated since v9.2.3 : bottom=0, top=1
+recalbox_wii_realwiimotes: 0 # deprecated since v9.2.3 : set to 1 to use authentic Wiimotes
