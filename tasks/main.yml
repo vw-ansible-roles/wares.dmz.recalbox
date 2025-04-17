@@ -2,8 +2,6 @@
 # tasks file for recalbox
 - name: Remount root fs as writable
   ansible.builtin.shell: "mount -o remount,rw /"
-  args:
-    warn: no
 
 - name: Set root password (old method)
   ansible.builtin.shell: |
