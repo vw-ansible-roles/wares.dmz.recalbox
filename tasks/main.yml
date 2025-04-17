@@ -39,8 +39,6 @@
 
 - name: Remount /boot fs as writable
   ansible.builtin.shell: "mount -o remount,rw /boot"
-  args:
-    warn: no
 
 - name: Copy a version of recalbox-boot.conf
   ansible.builtin.template:
