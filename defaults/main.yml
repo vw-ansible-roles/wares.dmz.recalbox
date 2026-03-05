@@ -26,6 +26,8 @@ recalbox_sharedevice_network_directives:
   - {name: 'sharenetwork_smb', local_path: 'SAVES', hostname: '192.168.0.100', remote_path: 'games/emul/saves', auth: 'username=recalbox,password=5m8P455w0rd,vers=2.0'}
   - {name: 'sharenetwork_smb', local_path: 'BIOS', hostname: '192.168.0.100', remote_path: 'games/emul/bios', auth: 'guest'}
   - {name: 'sharenetwork_smb', local_path: 'MUSIC', hostname: '192.168.0.100', remote_path: 'music/rock', auth: 'guest'}
+recalbox_ignored_systems:
+  - example-name
 
 # multiplayer
 recalbox_global_netplay_nickname : "PlayerOne"

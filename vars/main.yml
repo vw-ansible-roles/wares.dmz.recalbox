@@ -4,7 +4,7 @@
 # general/network
 recalbox_ssh_enabled: 1
 recalbox_samba_enabled: 0
-recalbox_audio_device: "alsa_card.1:hdmi-output-0"
+recalbox_audio_device: "auto"
 recalbox_audio_mode: "videosoundonly" # deprecated since v9.2.3 : musicxorvideosound,musicandvideosound,musiconly,videosoundonly,none
 recalbox_music_volume: 60 # new since v9.2.3
 recalbox_audio_volume: 90
