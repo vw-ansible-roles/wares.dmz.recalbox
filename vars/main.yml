@@ -27,6 +27,6 @@ recalbox_es_collection_lastplayed: 1
 recalbox_global_netplay_enabled: 1
 recalbox_global_netplay_port: 55435
 
-# pc only
+# kodi
 recalbox_kodi_enabled: 1
 recalbox_kodi_at_startup: 0
